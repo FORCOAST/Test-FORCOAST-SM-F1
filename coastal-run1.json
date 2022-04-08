@@ -1,0 +1,52 @@
+{
+  "inputs": [
+    {
+      "id": "BathymetryWeight",
+      "input": {
+        "value": "0.33"
+      }
+    },
+    {
+      "id": "SalinityWeight",
+      "input": {
+        "value": "0.55"
+      }
+    },
+    {
+      "id": "TemperatureWeight",
+      "input": {
+        "value": "0.12"
+      }
+    },
+    {
+      "id": "endpoint",
+      "input": {
+        "value": "https://forecoast.apps.k.terrasigna.com/geoserver"
+      }
+    },
+    {
+      "id": "user",
+      "input": {
+        "value": "admin"
+      }
+    },
+    {
+      "id": "password",
+      "input": {
+        "value": "#33f0rc0ast"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "id": "result",
+      "format": {
+        "mimeType": "application/binary"
+      },
+      "transmissionMode": "reference"
+    }
+  ],
+  "response": "document",
+  "mode": "async"
+}
+

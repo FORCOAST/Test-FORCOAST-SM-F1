@@ -1,0 +1,63 @@
+{
+  "immediateDeployment": "false",
+  "executionUnit": [
+    {
+      "cwlVersion": "v1.0",
+      "class": "CommandLineTool",
+      "id": "terrasigna-coastal-ap",
+      "inputs": {
+        "BathymetryWeight": {
+          "inputBinding": {
+            "position": 1
+          },
+          "type": "string"
+        },
+        "SalinityWeight": {
+          "inputBinding": {
+            "position": 2
+          },
+          "type": "string"
+        },
+        "TemperatureWeight": {
+          "inputBinding": {
+            "position": 3
+          },
+          "type": "string"
+        },
+        "endpoint": {
+          "inputBinding": {
+            "position": 4
+          },
+          "type": "string"
+        },
+        "user": {
+          "inputBinding": {
+            "position": 5
+          },
+          "type": "string"
+        },
+        "password": {
+          "inputBinding": {
+            "position": 6
+          },
+          "type": "string"
+        }
+      },
+      "outputs": {
+        "result": {
+          "outputBinding": {
+            "glob": "HSI_whiting.tif"
+          },
+          "type": "File"
+        }
+      },
+      "hints": {
+        "DockerRequirement": {
+          "dockerPull": "registry.terrasigna.com/vasile.craciunescu/forcoast-fishing-index:latest"
+        }
+      }
+    }
+  ],
+  "deploymentProfileName": "http://www.opengis.net/profiles/eoc/workflow"
+}
+
