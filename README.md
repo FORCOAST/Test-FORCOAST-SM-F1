@@ -1,3 +1,23 @@
+## Run as container
+
+```
+To build this image:
+-Open cmd or powershell with Docker running
+-cd %directory of the dockerfile%
+-Then run the command: "docker build -t forcoast-sm-f1 ."
+
+Available parameters: (parameters are area dependent, defaults: black sea)
+
+$1: Weight bathymetry, default: 0.33
+$2: Weight salinity, default:0.55
+$3: Weight temperature, default: 0.12
+
+To run the container:
+
+"docker run forcoast-sm-f1 $1 $2 $3" all parameters need to be given
+Example with default values: "docker run forcoast-sm-f1 0.33 0.55 0.12"
+```
+
 ## Coastal Application Package
 
 ### Register Coastal Application Package
