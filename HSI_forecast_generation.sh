@@ -1,11 +1,18 @@
 #!/bin/bash
 
 CURRENT_DIR="$(pwd)"
-GEOSERVER_ENDPOINT="$4"
-GEOSERVER_USER="$5"
-GEOSERVER_PASSWORD="$6"
+# GEOSERVER_ENDPOINT="$4"
+GEOSERVER_USER="$4"
+GEOSERVER_PASSWORD="$5"
 
 DATA_DIR=/usr/src/app/data
+
+# characters like # and / not accepted by API. Use unicode and convert back to # and / here (because Geoserver does not accept them as unicode
+password=$5
+echo $password
+password=${password/'%92'/'\'}
+password=${password/'%23'/'#'}
+echo $password
 
 #assign the bathymetry by bate
 declare -i current_date=$(date +%m) #declare variable as int
@@ -71,6 +78,7 @@ echo '{
 }
 ' > ${STORAGE_OUT_DIR}/import.json
 
-#curl -u "admin:#33f0rc0ast" -XPOST -H "Content-type: application/json" -d @${STORAGE_OUT_DIR}/import.json "https://forecoast.apps.k.terrasigna.com/geoserver/rest/imports?async=true&exec=true"
-curl -u "admin:#33f0rc0ast" -XPOST -H "Content-type:application/zip" -T "/usr/src/app/HSI_whiting.zip" "https://forecoast.apps.k.terrasigna.com/geoserver/rest/workspaces/forcoast/coveragestores/HSI_whiting/file.imagemosaic?recalculate=nativebbox.latlonbbox"
+#curl -u "$4:$password" -XPOST -H "Content-type: application/json" -d @${STORAGE_OUT_DIR}/import.json "https://forecoast.apps.k.terrasigna.com/geoserver/rest/imports?async=true&exec=true"
+echo curl -u "$4:$password" -XPOST -H "Content-type:application/zip" -T "/usr/src/app/HSI_whiting.zip" "https://forecoast.apps.k.terrasigna.com/geoserver/rest/workspaces/forcoast/coveragestores/HSI_whiting/file.imagemosaic?recalculate=nativebbox.latlonbbox"
+curl -u "$4:$password" -XPOST -H "Content-type:application/zip" -T "/usr/src/app/HSI_whiting.zip" "https://forecoast.apps.k.terrasigna.com/geoserver/rest/workspaces/forcoast/coveragestores/HSI_whiting/file.imagemosaic?recalculate=nativebbox.latlonbbox"
 exit 0
