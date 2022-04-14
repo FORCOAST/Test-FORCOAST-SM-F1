@@ -2,7 +2,7 @@
 
 #folder for datasets download and other variables
 download_dir=/usr/src/app/data/download/sal
-aoi=/usr/src/app/data/AOI_Skyfish.shp
+aoi=/usr/src/app/data/EEZ_RO_BG_3857_fixed.shp
 
 
 #denumiri si indicative produse
@@ -37,7 +37,7 @@ python3 -m motuclient --user 'sasrc' --pwd 'Skyf1sh#1' --motu http://nrt.cmems-d
 lista=("$name_day_2" "$name_day_1" "$name_day0" "$name_day1" "$name_day2" "$name_day3" "$name_day4" "$name_day5" "$name_day6" "$name_day7" "$name_day8" "$name_day9") # creates the list of names to be used for the tif files (indexed starting with 0, therefore $i-1 is required
 for i in {1..12}
 do
-gdal_translate -b $i -a_srs EPSG:4326 -projwin 27.4427 46.8495 32.4365 42.1766 $download_dir/sv03_bs_cmcc_sal_an_fc_d_$name_day_2.nc $download_dir/sv03_bs_cmcc_sal_an_fc_d_${lista[$i-1]}.tif 
+gdal_translate -b $i -a_srs EPSG:4326 -projwin 27.4427 45.215 31.415 41.975 $download_dir/sv03_bs_cmcc_sal_an_fc_d_$name_day_2.nc $download_dir/sv03_bs_cmcc_sal_an_fc_d_${lista[$i-1]}.tif 
 done
 
 #crop to AOI, second resampling, compress and add tiles
