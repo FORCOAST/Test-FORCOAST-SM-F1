@@ -7,9 +7,15 @@ Xmin="$6"
 Ymin="$7"
 
 CURRENT_DIR="$(pwd)"
-GEOSERVER_ENDPOINT="$8"
-GEOSERVER_USER="$9"
-GEOSERVER_PASSWORD="${10}"
+GEOSERVER_USER="$8"
+GEOSERVER_PASSWORD="$9"
+
+
+GEOSERVER_PASSWORD=${GEOSERVER_PASSWORD/'%92'/'\'}
+GEOSERVER_PASSWORD=${GEOSERVER_PASSWORD/'%23'/'#'}
+
+Bot_ID="${10}"
+Token="${11}"
 
 
 
@@ -79,9 +85,9 @@ echo '{
 }
 ' > ${STORAGE_OUT_DIR}/import.json
 
-#curl -u "admin:#33f0rc0ast" -XPOST -H "Content-type: application/json" -d @${STORAGE_OUT_DIR}/import.json "https://forecoast.apps.k.terrasigna.com/geoserver/rest/imports?async=true&exec=true"
-curl -u "admin:#33f0rc0ast" -XPOST -H "Content-type:application/zip" -T "/usr/src/app/HSI_whiting.zip" "https://forecoast.apps.k.terrasigna.com/geoserver/rest/workspaces/forcoast/coveragestores/HSI_whiting/file.imagemosaic?recalculate=nativebbox.latlonbbox"
+#curl -u "${GEOSERVER_USER}:${GEOSERVER_PASSWORD}" -XPOST -H "Content-type: application/json" -d @${STORAGE_OUT_DIR}/import.json "https://forecoast.apps.k.terrasigna.com/geoserver/rest/imports?async=true&exec=true"
+curl -u "${GEOSERVER_USER}:${GEOSERVER_PASSWORD}" -XPOST -H "Content-type:application/zip" -T "/usr/src/app/HSI_whiting.zip" "https://forecoast.apps.k.terrasigna.com/geoserver/rest/workspaces/forcoast/coveragestores/HSI_whiting/file.imagemosaic?recalculate=nativebbox.latlonbbox"
 
-python3 /usr/src/app/Map_generator_docker.py $HSI_whiting $Xmax $Ymax $Xmin $Ymin
+python3 /usr/src/app/Map_generator_docker.py $HSI_whiting $Xmax $Ymax $Xmin $Ymin $Bot_ID $Token
 
 exit 0

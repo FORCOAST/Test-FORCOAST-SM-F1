@@ -304,4 +304,4 @@ def send_bulletin(token,chat_id,bulletin,method):
 		bot.sendPhoto(chat_id, photo=open('bulletin.png', 'rb'))
 
 
-send_bulletin("5267228188:AAGx60FtWgHkScBb3ISFL1dp6Oq_9z9z0rw", "-1001621401692", "/usr/src/app/F1-Bulletin-map.png", "file")
+send_bulletin(sys.argv[6], sys.argv[7], "/usr/src/app/F1-Bulletin-map.png", "file")
