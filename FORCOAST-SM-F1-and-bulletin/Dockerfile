@@ -1,4 +1,4 @@
-FROM osgeo/gdal
+FROM osgeo/gdal:ubuntu-full-3.4.3
 
 COPY . /usr/src/app
 
