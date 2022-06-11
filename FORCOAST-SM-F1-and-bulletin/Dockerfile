@@ -29,3 +29,4 @@ RUN chmod 755 /usr/src/app/HSI_forecast_generation.sh /usr/src/app/HSI_forecast_
     mkdir -p /usr/src/app/data/download/sal/SI
 
 ENTRYPOINT ["/usr/src/app/HSI_forecast_generation.sh"]
+# ENTRYPOINT ["bash", "-c"]
