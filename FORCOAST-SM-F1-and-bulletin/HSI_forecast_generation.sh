@@ -1,5 +1,7 @@
 #!/bin/bash
 
+INITIAL_DIR="$(pwd)"
+
 #Bounding box
 Xmax="$4"
 Ymax="$5"
@@ -10,14 +12,11 @@ CURRENT_DIR="$(pwd)"
 GEOSERVER_USER="$8"
 GEOSERVER_PASSWORD="$9"
 
-
 GEOSERVER_PASSWORD=${GEOSERVER_PASSWORD/'%92'/'\'}
 GEOSERVER_PASSWORD=${GEOSERVER_PASSWORD/'%23'/'#'}
 
 Token="${10}"
 Chat_ID="${11}"
-
-
 
 DATA_DIR=/usr/src/app
 
@@ -89,5 +88,7 @@ echo '{
 curl -u "${GEOSERVER_USER}:${GEOSERVER_PASSWORD}" -XPOST -H "Content-type:application/zip" -T "/usr/src/app/HSI_whiting.zip" "https://forecoast.apps.k.terrasigna.com/geoserver/rest/workspaces/forcoast/coveragestores/HSI_whiting/file.imagemosaic?recalculate=nativebbox.latlonbbox"
 
 python3 /usr/src/app/Map_generator_docker.py $HSI_whiting $Xmax $Ymax $Xmin $Ymin $Token $Chat_ID
+
+cp /usr/src/app/F1-Bulletin-map.png $INITIAL_DIR
 
 exit 0
