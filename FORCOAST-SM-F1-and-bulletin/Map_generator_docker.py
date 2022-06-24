@@ -80,7 +80,7 @@ boundaries_text_settings.setFont(QFont("Arial",12))
 boundaries_text_settings.setColor(QColor(23,111,176))
 boundaries_text_settings.setSize(16)
 boundaries_settings.setFormat(boundaries_text_settings)
-boundaries_settings.placement = 0
+#boundaries_settings.placement = 0
 
 label = QgsVectorLayerSimpleLabeling(boundaries_settings)
 boundaries_layer.setLabelsEnabled(True)
