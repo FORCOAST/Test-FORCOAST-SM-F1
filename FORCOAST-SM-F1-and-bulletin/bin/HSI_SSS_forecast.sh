@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# "(C) Copyright FORCOAST H2020 project under Grant No. 870465. All rights reserved."
 #folder for datasets download and other variables
 download_dir=/usr/src/app/data/download/sal
 aoi=/usr/src/app/data/EEZ_RO_BG_3857_fixed.shp

@@ -1,3 +1,4 @@
+# "(C) Copyright FORCOAST H2020 project under Grant No. 870465. All rights reserved."
 from qgis.PyQt import *
 from qgis.core import *
 from qgis.PyQt.QtGui import *
