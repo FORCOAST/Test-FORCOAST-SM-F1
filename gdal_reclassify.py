@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# "(C) Copyright FORCOAST H2020 project under Grant No. 870465. All rights reserved." 
 import sys
 import optparse
 from osgeo import gdal

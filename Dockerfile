@@ -1,3 +1,4 @@
+# "(C) Copyright FORCOAST H2020 project under Grant No. 870465. All rights reserved."
 FROM ubuntu:20.04
 
 RUN apt-get update && \

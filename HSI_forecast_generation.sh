@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# "(C) Copyright FORCOAST H2020 project under Grant No. 870465. All rights reserved."
 CURRENT_DIR="$(pwd)"
 # GEOSERVER_ENDPOINT="$4"
 GEOSERVER_USER="$4"
