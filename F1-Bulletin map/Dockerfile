@@ -1,3 +1,4 @@
+# "(C) Copyright FORCOAST H2020 project under Grant No. 870465. All rights reserved."
 FROM osgeo/gdal:ubuntu-full-3.4.3
 
 COPY . /usr/src/app
