@@ -1,5 +1,22 @@
 #!/bin/bash
 
+#(C) Copyright FORCOAST H2020 project under Grant No. 870465. All rights reserved.
+
+# Copyright notice
+# --------------------------------------------------------------------
+#  Copyright 2022 Terrasigna
+#   Ionut Serban
+#
+#   ionut.serban@terrasigna.com
+#
+#    Licensed under the Apache License, Version 2.0 (the "License");
+#    you may not use this file except in compliance with the License.
+#    You may obtain a copy of the License at
+#
+#
+#        http://www.apache.org/licenses/LICENSE-2.0
+# --------------------------------------------------------------------
+
 #folder for datasets download and other variables
 download_dir=/usr/src/app/data/download/tem
 aoi=/usr/src/app/data/EEZ_RO_BG_3857_fixed.shp

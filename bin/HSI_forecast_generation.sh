@@ -1,5 +1,22 @@
 #!/bin/bash
 
+#(C) Copyright FORCOAST H2020 project under Grant No. 870465. All rights reserved.
+
+# Copyright notice
+# --------------------------------------------------------------------
+#  Copyright 2022 Terrasigna, Deltares
+#   Ionut Serban, Daniel Twigt, Gido Stoop
+#
+#   ionut.serban@terrasigna.com, daniel.twigt@deltares.nl, gido.stoop@deltares.nl
+#
+#    Licensed under the Apache License, Version 2.0 (the "License");
+#    you may not use this file except in compliance with the License.
+#    You may obtain a copy of the License at
+#
+#
+#        http://www.apache.org/licenses/LICENSE-2.0
+# --------------------------------------------------------------------
+
 INITIAL_DIR="$(pwd)"
 
 #Bounding box
